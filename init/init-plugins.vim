@@ -17,6 +17,7 @@ if !exists('g:bundle_group')
 	let g:bundle_group = ['basic', 'tags', 'enhanced', 'filetypes', 'textobj']
 	let g:bundle_group += ['tags', 'airline', 'nerdtree', 'ale', 'echodoc']
 	let g:bundle_group += ['leaderf']
+	let g:bundle_group += ['YouCompleteMe']
 endif
 
 
@@ -517,7 +518,17 @@ if index(g:bundle_group, 'leaderf') >= 0
 	endif
 endif
 
+" extra plugins by myself
+if index(g:bundle_group, 'YouCompleteMe') >= 0
+	Plug 'ycm-core/YouCompleteMe'
+	noremap <space>fi :YcmCompleter FixIt<CR>
+	noremap <space>gt :YcmCompleter GoTo<CR>
+	noremap <space>gd :YcmCompleter GoToDefinition<CR>
+	noremap <space>gh :YcmCompleter GoToDeclaration<CR>
+	noremap <space>gr :YcmCompleter GoToReferences<CR>
+endif
 
+Plug 'voldikss/vim-floaterm'
 "----------------------------------------------------------------------
 " 结束插件安装
 "----------------------------------------------------------------------
