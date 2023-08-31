@@ -17,7 +17,7 @@
 
 
 " keymap by myself
-let mapleader = " "
+" let mapleader = " "
 
 "----------------------------------------------------------------------
 " INSERT 模式下使用 EMACS 键位

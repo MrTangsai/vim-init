@@ -18,6 +18,7 @@ if !exists('g:bundle_group')
 	let g:bundle_group += ['tags', 'airline', 'nerdtree', 'ale', 'echodoc']
 	let g:bundle_group += ['leaderf']
 	let g:bundle_group += ['YouCompleteMe']
+	let g:bundle_group += ['floaterm']
 endif
 
 
@@ -528,7 +529,18 @@ if index(g:bundle_group, 'YouCompleteMe') >= 0
 	noremap <space>gr :YcmCompleter GoToReferences<CR>
 endif
 
-Plug 'voldikss/vim-floaterm'
+if index(g:bundle_group, 'floaterm') >= 0
+	Plug 'voldikss/vim-floaterm'
+	nnoremap   <silent>   <F7>    :FloatermNew<CR>
+	tnoremap   <silent>   <F7>    <C-\><C-n>:FloatermNew<CR>
+	nnoremap   <silent>   <F8>    :FloatermPrev<CR>
+	tnoremap   <silent>   <F8>    <C-\><C-n>:FloatermPrev<CR>
+	nnoremap   <silent>   <F9>    :FloatermNext<CR>
+	tnoremap   <silent>   <F9>    <C-\><C-n>:FloatermNext<CR>
+	nnoremap   <space><space>   :FloatermToggle<CR>
+	tnoremap   <ESC>   <C-\><C-n>:FloatermToggle<CR>
+endif
+
 "----------------------------------------------------------------------
 " 结束插件安装
 "----------------------------------------------------------------------
